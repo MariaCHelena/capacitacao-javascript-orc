@@ -1,18 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Capacitação JavaScript</title>
+    <link rel="stylesheet" href="/assets/index.css">
 </head>
+
 <body>
-    <h1>Vanilla JavaScript</h1>
-    <div>
-        <ul>
-            <li><a href="">Site 1</a></li>
-            <li><a href="">Site 2</a></li>
-            <li><a href="">Site 3</a></li>
-        </ul>
-    </div>
+
+    <h1 class="titulo">Vanilla JavaScript</h1>
+    <main>
+        <div class="navbar_div">
+            <ul class="navbar_links_wrapper">
+                <li><a href="" class="navbar_buttons">Introdução</a></li>
+                <li><a href="" class="navbar_buttons">Sintaxe</a></li>
+                <li><a href="" class="navbar_buttons">Interação com DOM</a></li>
+                <li><a href="" class="navbar_buttons">Mais fontes de estudo</a></li>
+            </ul>
+        </div>
+
+        <canvas width="600" height="400"></canvas>
+        <div><span>Clique na tela para colocar uma flor :D</span></div>
+
+        <script>
+            var tela = document.querySelector('canvas');
+            var pincel = tela.getContext('2d');
+
+            pincel.fillStyle = 'gray';
+            pincel.fillRect(0, 0, 600, 400);
+
+            function clique(evento) {
+
+                var x = evento.pageX - tela.offsetLeft;
+                var y = evento.pageY - tela.offsetTop;
+                desenhaFlor(x, y, 'red');
+
+            }
+
+            function desenhaRetangulo(x, y, largura, altura, cor) {
+                pincel.fillStyle = cor;
+                pincel.fillRect(x, y, largura, altura);
+
+            }
+
+            function desenhaCirculo(x, y, raio, cor) {
+                pincel.fillStyle = cor;
+                pincel.beginPath();
+                pincel.arc(x, y, raio, 0, 2 * 3.14);
+                pincel.fill();
+            }
+
+            desenhaRetangulo(0, 0, 600, 400, 'lightblue');
+            desenhaRetangulo(0, 350, 600, 50, 'green');
+
+            function desenhaNuvem(x, y, tamanho) {
+                desenhaCirculo(x, y, tamanho, 'white');
+                desenhaCirculo(x + 35, y, tamanho + 5, 'white');
+                desenhaCirculo(x + 70, y, tamanho, 'white');
+            }
+
+            desenhaNuvem(50, 50, 20);
+            desenhaNuvem(290, 45, 20);
+            desenhaNuvem(480, 70, 20);
+
+            function desenhaFlor(x, y, cor) {
+                desenhaRetangulo(x - 5, y, 10, 400 - y - 50, 'darkgreen');
+                desenhaCirculo(x, y, 12, 'yellow');
+
+                //pétalas
+                desenhaCirculo(x, y - 20, 10, cor);
+                desenhaCirculo(x + 15, y - 15, 10, cor);
+                desenhaCirculo(x + 20, y, 10, cor);
+                desenhaCirculo(x + 15, y + 15, 10, cor);
+                desenhaCirculo(x, y + 20, 10, cor);
+                desenhaCirculo(x - 15, y + 15, 10, cor);
+                desenhaCirculo(x - 20, y, 10, cor);
+                desenhaCirculo(x - 15, y - 15, 10, cor);
+            }
+
+            tela.onclick = clique;
+
+        </script>
+    </main>
 </body>
+
 </html>
