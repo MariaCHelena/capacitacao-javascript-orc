@@ -5,7 +5,64 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Capacitação JavaScript</title>
-    <link rel="stylesheet" href="/assets/index.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: white;
+        }
+
+        :root {
+            --black: #000;
+            --white: #fff;
+            --yellow: #fbe656;
+        }
+
+        main {
+            background-color: var(--yellow);
+            width: 100vw;
+            padding: 2.5em;
+            height: 70vh;
+        }
+
+        .titulo {
+            background-color: var(--yellow);
+            display: inline-block;
+            padding: 10px 50px;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            margin-top: 1.5em;
+        }
+
+        canvas {
+            display: block;
+            margin: auto;
+        }
+
+        span {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: aquamarine;
+        }
+
+        div {
+            display: flex;
+            width: 100%;
+            align-items: center;
+            justify-content: center;
+        }
+
+        img {
+            position: fixed;
+            bottom: 5px;
+            right: 5px;
+        }
+    </style>
 </head>
 
 <body>
