@@ -18,7 +18,7 @@ main{
     background-color: var(--yellow);
     width: 100vw;
     padding: 2.5em;
-    height: 80vh;
+    height: 70vh;
 }
 
 .titulo{
@@ -30,38 +30,9 @@ main{
     margin-top: 1.5em;
 }
 
-.navbar_div{
-    width: 90%;
-    display: flex;
-    align-items: center;
-    margin: 20px auto 50px;
-}
-
-.navbar_links_wrapper{
-    display: flex;
-    align-items: center;
-    flex-grow: 1;
-    flex-direction: row;
-    justify-content: space-around;
-
-    list-style-type: none;
-}
-
-.navbar_links_wrapper li{
-    padding: 10px 70px;
-    
-}
-
-.navbar_buttons{
-    color: var(--black);
-    text-decoration: none;
-    
-    padding: 10px 70px;
-    background-color: whitesmoke;
-}
-
 canvas {
     display: block;
+    margin: auto;
 }
 
 span {
@@ -69,6 +40,13 @@ span {
     padding: 10px;
     border-radius: 5px;
     background-color: aquamarine;
+}
+
+div{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
 }
 
 img {
